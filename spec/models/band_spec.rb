@@ -6,6 +6,7 @@ RSpec.describe Band, type: :model do
     it { should validate_presence_of :year_formed}
     it { should validate_presence_of :active}
   end
+  
   describe "relationships" do
     it { should have_many :records}
   end
