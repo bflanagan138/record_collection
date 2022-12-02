@@ -4,7 +4,7 @@ RSpec.describe Band, type: :model do
   describe "validations" do 
     it { should validate_presence_of :name}
     it { should validate_presence_of :year_formed}
-    it { should validate_presence_of :active}
+    # it { should validate_inclusion_of :active}
   end
   
   describe "relationships" do
