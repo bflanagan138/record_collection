@@ -1,0 +1,4 @@
+<h1>Bands</h1>
+<% @bands.each do |band| %>
+  <p><%= link_to band.name, "/bands/#{band.id}" %></p>
+<% end %>
