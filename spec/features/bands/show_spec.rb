@@ -14,10 +14,15 @@ RSpec.describe "band show" do
     @record_7 = @band_1.records.create!(title: "Vengeance", format_size: 12, release_year: 2003, color_vinyl: false)
   end
 
-  it 'shows band names' do
-    visit "/bands/#{band.id}"
-    expect(page).to have_content(@band_1.name)
-    expect(page).to have_content(@band_2.name)
-    expect(page).to have_content(@band_3.name)
+  describe 'user story 2' do 
+    it 'shows band and their attributes' do
+      visit "/bands/#{@band_1.id}"
+      expect(page).to have_content(@band_1.name)
+      expect(page).to have_content(@band_1.year_formed)
+      expect(page).to have_content(@band_1.active)
+      expect(page).to_not have_content(@band_2.name)
+      expect(page).to_not have_content(@band_2.year_formed)
+      expect(page).to_not have_content(@band_2.active)
+    end
   end
 end
